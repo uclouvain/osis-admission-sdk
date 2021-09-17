@@ -1,12 +1,10 @@
-# InitierPropositionCommand
+# CompleterPropositionCommand
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**uuid** | **str** |  | 
 **type_admission** | **str** |  | 
-**sigle_formation** | **str** |  | 
-**annee_formation** | **int** |  | 
-**matricule_candidat** | **str** |  | 
 **documents_projet** | **[str]** |  | 
 **graphe_gantt** | **[str]** |  | 
 **proposition_programme_doctoral** | **[str]** |  | 
