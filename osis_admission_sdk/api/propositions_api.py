@@ -21,11 +21,17 @@ from osis_admission_sdk.model_utils import (  # noqa: F401
     none_type,
     validate_and_convert_types
 )
+from osis_admission_sdk.model.accepted_language_enum import AcceptedLanguageEnum
+from osis_admission_sdk.model.add_supervision_actor import AddSupervisionActor
 from osis_admission_sdk.model.completer_proposition_command import CompleterPropositionCommand
+from osis_admission_sdk.model.cotutelle_dto import CotutelleDTO
+from osis_admission_sdk.model.definir_cotutelle_command import DefinirCotutelleCommand
+from osis_admission_sdk.model.error import Error
 from osis_admission_sdk.model.initier_proposition_command import InitierPropositionCommand
 from osis_admission_sdk.model.proposition_dto import PropositionDTO
 from osis_admission_sdk.model.proposition_identity_dto import PropositionIdentityDTO
 from osis_admission_sdk.model.proposition_search_dto import PropositionSearchDTO
+from osis_admission_sdk.model.supervision_dto import SupervisionDTO
 
 
 class PropositionsApi(object):
@@ -54,6 +60,11 @@ class PropositionsApi(object):
 
 
             Keyword Args:
+                accept_language (AcceptedLanguageEnum): The header advertises which languages the client is able to understand, and which locale variant is preferred. (By languages, we mean natural languages, such as English, and not programming languages.). [optional]
+                x_user_first_name (str): [optional]
+                x_user_last_name (str): [optional]
+                x_user_email (str): [optional]
+                x_user_global_id (str): [optional]
                 initier_proposition_command (InitierPropositionCommand): [optional]
                 _return_http_data_only (bool): response data without head status
                     code and headers. Default is True.
@@ -114,6 +125,11 @@ class PropositionsApi(object):
             },
             params_map={
                 'all': [
+                    'accept_language',
+                    'x_user_first_name',
+                    'x_user_last_name',
+                    'x_user_email',
+                    'x_user_global_id',
                     'initier_proposition_command',
                 ],
                 'required': [],
@@ -130,12 +146,32 @@ class PropositionsApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
+                    'accept_language':
+                        (AcceptedLanguageEnum,),
+                    'x_user_first_name':
+                        (str,),
+                    'x_user_last_name':
+                        (str,),
+                    'x_user_email':
+                        (str,),
+                    'x_user_global_id':
+                        (str,),
                     'initier_proposition_command':
                         (InitierPropositionCommand,),
                 },
                 'attribute_map': {
+                    'accept_language': 'Accept-Language',
+                    'x_user_first_name': 'X-User-FirstName',
+                    'x_user_last_name': 'X-User-LastName',
+                    'x_user_email': 'X-User-Email',
+                    'x_user_global_id': 'X-User-GlobalID',
                 },
                 'location_map': {
+                    'accept_language': 'header',
+                    'x_user_first_name': 'header',
+                    'x_user_last_name': 'header',
+                    'x_user_email': 'header',
+                    'x_user_global_id': 'header',
                     'initier_proposition_command': 'body',
                 },
                 'collection_format_map': {
@@ -167,6 +203,11 @@ class PropositionsApi(object):
 
 
             Keyword Args:
+                accept_language (AcceptedLanguageEnum): The header advertises which languages the client is able to understand, and which locale variant is preferred. (By languages, we mean natural languages, such as English, and not programming languages.). [optional]
+                x_user_first_name (str): [optional]
+                x_user_last_name (str): [optional]
+                x_user_email (str): [optional]
+                x_user_global_id (str): [optional]
                 _return_http_data_only (bool): response data without head status
                     code and headers. Default is True.
                 _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -226,6 +267,11 @@ class PropositionsApi(object):
             },
             params_map={
                 'all': [
+                    'accept_language',
+                    'x_user_first_name',
+                    'x_user_last_name',
+                    'x_user_email',
+                    'x_user_global_id',
                 ],
                 'required': [],
                 'nullable': [
@@ -241,10 +287,30 @@ class PropositionsApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
+                    'accept_language':
+                        (AcceptedLanguageEnum,),
+                    'x_user_first_name':
+                        (str,),
+                    'x_user_last_name':
+                        (str,),
+                    'x_user_email':
+                        (str,),
+                    'x_user_global_id':
+                        (str,),
                 },
                 'attribute_map': {
+                    'accept_language': 'Accept-Language',
+                    'x_user_first_name': 'X-User-FirstName',
+                    'x_user_last_name': 'X-User-LastName',
+                    'x_user_email': 'X-User-Email',
+                    'x_user_global_id': 'X-User-GlobalID',
                 },
                 'location_map': {
+                    'accept_language': 'header',
+                    'x_user_first_name': 'header',
+                    'x_user_last_name': 'header',
+                    'x_user_email': 'header',
+                    'x_user_global_id': 'header',
                 },
                 'collection_format_map': {
                 }
@@ -259,6 +325,155 @@ class PropositionsApi(object):
             callable=__list_propositions
         )
 
+        def __retrieve_cotutelle(
+            self,
+            uuid,
+            **kwargs
+        ):
+            """retrieve_cotutelle  # noqa: E501
+
+            Get the cotutelle of a proposition  # noqa: E501
+            This method makes a synchronous HTTP request by default. To make an
+            asynchronous HTTP request, please pass async_req=True
+
+            >>> thread = api.retrieve_cotutelle(uuid, async_req=True)
+            >>> result = thread.get()
+
+            Args:
+                uuid (str):
+
+            Keyword Args:
+                accept_language (AcceptedLanguageEnum): The header advertises which languages the client is able to understand, and which locale variant is preferred. (By languages, we mean natural languages, such as English, and not programming languages.). [optional]
+                x_user_first_name (str): [optional]
+                x_user_last_name (str): [optional]
+                x_user_email (str): [optional]
+                x_user_global_id (str): [optional]
+                _return_http_data_only (bool): response data without head status
+                    code and headers. Default is True.
+                _preload_content (bool): if False, the urllib3.HTTPResponse object
+                    will be returned without reading/decoding response data.
+                    Default is True.
+                _request_timeout (float/tuple): timeout setting for this request. If one
+                    number provided, it will be total request timeout. It can also
+                    be a pair (tuple) of (connection, read) timeouts.
+                    Default is None.
+                _check_input_type (bool): specifies if type checking
+                    should be done one the data sent to the server.
+                    Default is True.
+                _check_return_type (bool): specifies if type checking
+                    should be done one the data received from the server.
+                    Default is True.
+                _host_index (int/None): specifies the index of the server
+                    that we want to use.
+                    Default is read from the configuration.
+                async_req (bool): execute request asynchronously
+
+            Returns:
+                CotutelleDTO
+                    If the method is called asynchronously, returns the request
+                    thread.
+            """
+            kwargs['async_req'] = kwargs.get(
+                'async_req', False
+            )
+            kwargs['_return_http_data_only'] = kwargs.get(
+                '_return_http_data_only', True
+            )
+            kwargs['_preload_content'] = kwargs.get(
+                '_preload_content', True
+            )
+            kwargs['_request_timeout'] = kwargs.get(
+                '_request_timeout', None
+            )
+            kwargs['_check_input_type'] = kwargs.get(
+                '_check_input_type', True
+            )
+            kwargs['_check_return_type'] = kwargs.get(
+                '_check_return_type', True
+            )
+            kwargs['_host_index'] = kwargs.get('_host_index')
+            kwargs['uuid'] = \
+                uuid
+            return self.call_with_http_info(**kwargs)
+
+        self.retrieve_cotutelle = _Endpoint(
+            settings={
+                'response_type': (CotutelleDTO,),
+                'auth': [
+                    'Token'
+                ],
+                'endpoint_path': '/propositions/{uuid}/cotutelle',
+                'operation_id': 'retrieve_cotutelle',
+                'http_method': 'GET',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'uuid',
+                    'accept_language',
+                    'x_user_first_name',
+                    'x_user_last_name',
+                    'x_user_email',
+                    'x_user_global_id',
+                ],
+                'required': [
+                    'uuid',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'uuid':
+                        (str,),
+                    'accept_language':
+                        (AcceptedLanguageEnum,),
+                    'x_user_first_name':
+                        (str,),
+                    'x_user_last_name':
+                        (str,),
+                    'x_user_email':
+                        (str,),
+                    'x_user_global_id':
+                        (str,),
+                },
+                'attribute_map': {
+                    'uuid': 'uuid',
+                    'accept_language': 'Accept-Language',
+                    'x_user_first_name': 'X-User-FirstName',
+                    'x_user_last_name': 'X-User-LastName',
+                    'x_user_email': 'X-User-Email',
+                    'x_user_global_id': 'X-User-GlobalID',
+                },
+                'location_map': {
+                    'uuid': 'path',
+                    'accept_language': 'header',
+                    'x_user_first_name': 'header',
+                    'x_user_last_name': 'header',
+                    'x_user_email': 'header',
+                    'x_user_global_id': 'header',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [],
+            },
+            api_client=api_client,
+            callable=__retrieve_cotutelle
+        )
+
         def __retrieve_proposition(
             self,
             uuid,
@@ -266,6 +481,7 @@ class PropositionsApi(object):
         ):
             """retrieve_proposition  # noqa: E501
 
+            Get a single proposition  # noqa: E501
             This method makes a synchronous HTTP request by default. To make an
             asynchronous HTTP request, please pass async_req=True
 
@@ -276,6 +492,11 @@ class PropositionsApi(object):
                 uuid (str):
 
             Keyword Args:
+                accept_language (AcceptedLanguageEnum): The header advertises which languages the client is able to understand, and which locale variant is preferred. (By languages, we mean natural languages, such as English, and not programming languages.). [optional]
+                x_user_first_name (str): [optional]
+                x_user_last_name (str): [optional]
+                x_user_email (str): [optional]
+                x_user_global_id (str): [optional]
                 _return_http_data_only (bool): response data without head status
                     code and headers. Default is True.
                 _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -338,6 +559,11 @@ class PropositionsApi(object):
             params_map={
                 'all': [
                     'uuid',
+                    'accept_language',
+                    'x_user_first_name',
+                    'x_user_last_name',
+                    'x_user_email',
+                    'x_user_global_id',
                 ],
                 'required': [
                     'uuid',
@@ -357,12 +583,32 @@ class PropositionsApi(object):
                 'openapi_types': {
                     'uuid':
                         (str,),
+                    'accept_language':
+                        (AcceptedLanguageEnum,),
+                    'x_user_first_name':
+                        (str,),
+                    'x_user_last_name':
+                        (str,),
+                    'x_user_email':
+                        (str,),
+                    'x_user_global_id':
+                        (str,),
                 },
                 'attribute_map': {
                     'uuid': 'uuid',
+                    'accept_language': 'Accept-Language',
+                    'x_user_first_name': 'X-User-FirstName',
+                    'x_user_last_name': 'X-User-LastName',
+                    'x_user_email': 'X-User-Email',
+                    'x_user_global_id': 'X-User-GlobalID',
                 },
                 'location_map': {
                     'uuid': 'path',
+                    'accept_language': 'header',
+                    'x_user_first_name': 'header',
+                    'x_user_last_name': 'header',
+                    'x_user_email': 'header',
+                    'x_user_global_id': 'header',
                 },
                 'collection_format_map': {
                 }
@@ -377,6 +623,311 @@ class PropositionsApi(object):
             callable=__retrieve_proposition
         )
 
+        def __retrieve_supervision(
+            self,
+            uuid,
+            **kwargs
+        ):
+            """retrieve_supervision  # noqa: E501
+
+            Get the supervision group of a proposition  # noqa: E501
+            This method makes a synchronous HTTP request by default. To make an
+            asynchronous HTTP request, please pass async_req=True
+
+            >>> thread = api.retrieve_supervision(uuid, async_req=True)
+            >>> result = thread.get()
+
+            Args:
+                uuid (str):
+
+            Keyword Args:
+                accept_language (AcceptedLanguageEnum): The header advertises which languages the client is able to understand, and which locale variant is preferred. (By languages, we mean natural languages, such as English, and not programming languages.). [optional]
+                x_user_first_name (str): [optional]
+                x_user_last_name (str): [optional]
+                x_user_email (str): [optional]
+                x_user_global_id (str): [optional]
+                _return_http_data_only (bool): response data without head status
+                    code and headers. Default is True.
+                _preload_content (bool): if False, the urllib3.HTTPResponse object
+                    will be returned without reading/decoding response data.
+                    Default is True.
+                _request_timeout (float/tuple): timeout setting for this request. If one
+                    number provided, it will be total request timeout. It can also
+                    be a pair (tuple) of (connection, read) timeouts.
+                    Default is None.
+                _check_input_type (bool): specifies if type checking
+                    should be done one the data sent to the server.
+                    Default is True.
+                _check_return_type (bool): specifies if type checking
+                    should be done one the data received from the server.
+                    Default is True.
+                _host_index (int/None): specifies the index of the server
+                    that we want to use.
+                    Default is read from the configuration.
+                async_req (bool): execute request asynchronously
+
+            Returns:
+                SupervisionDTO
+                    If the method is called asynchronously, returns the request
+                    thread.
+            """
+            kwargs['async_req'] = kwargs.get(
+                'async_req', False
+            )
+            kwargs['_return_http_data_only'] = kwargs.get(
+                '_return_http_data_only', True
+            )
+            kwargs['_preload_content'] = kwargs.get(
+                '_preload_content', True
+            )
+            kwargs['_request_timeout'] = kwargs.get(
+                '_request_timeout', None
+            )
+            kwargs['_check_input_type'] = kwargs.get(
+                '_check_input_type', True
+            )
+            kwargs['_check_return_type'] = kwargs.get(
+                '_check_return_type', True
+            )
+            kwargs['_host_index'] = kwargs.get('_host_index')
+            kwargs['uuid'] = \
+                uuid
+            return self.call_with_http_info(**kwargs)
+
+        self.retrieve_supervision = _Endpoint(
+            settings={
+                'response_type': (SupervisionDTO,),
+                'auth': [
+                    'Token'
+                ],
+                'endpoint_path': '/propositions/{uuid}/supervision',
+                'operation_id': 'retrieve_supervision',
+                'http_method': 'GET',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'uuid',
+                    'accept_language',
+                    'x_user_first_name',
+                    'x_user_last_name',
+                    'x_user_email',
+                    'x_user_global_id',
+                ],
+                'required': [
+                    'uuid',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'uuid':
+                        (str,),
+                    'accept_language':
+                        (AcceptedLanguageEnum,),
+                    'x_user_first_name':
+                        (str,),
+                    'x_user_last_name':
+                        (str,),
+                    'x_user_email':
+                        (str,),
+                    'x_user_global_id':
+                        (str,),
+                },
+                'attribute_map': {
+                    'uuid': 'uuid',
+                    'accept_language': 'Accept-Language',
+                    'x_user_first_name': 'X-User-FirstName',
+                    'x_user_last_name': 'X-User-LastName',
+                    'x_user_email': 'X-User-Email',
+                    'x_user_global_id': 'X-User-GlobalID',
+                },
+                'location_map': {
+                    'uuid': 'path',
+                    'accept_language': 'header',
+                    'x_user_first_name': 'header',
+                    'x_user_last_name': 'header',
+                    'x_user_email': 'header',
+                    'x_user_global_id': 'header',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [],
+            },
+            api_client=api_client,
+            callable=__retrieve_supervision
+        )
+
+        def __update_cotutelle(
+            self,
+            uuid,
+            **kwargs
+        ):
+            """update_cotutelle  # noqa: E501
+
+            Set the cotutelle of a proposition  # noqa: E501
+            This method makes a synchronous HTTP request by default. To make an
+            asynchronous HTTP request, please pass async_req=True
+
+            >>> thread = api.update_cotutelle(uuid, async_req=True)
+            >>> result = thread.get()
+
+            Args:
+                uuid (str):
+
+            Keyword Args:
+                accept_language (AcceptedLanguageEnum): The header advertises which languages the client is able to understand, and which locale variant is preferred. (By languages, we mean natural languages, such as English, and not programming languages.). [optional]
+                x_user_first_name (str): [optional]
+                x_user_last_name (str): [optional]
+                x_user_email (str): [optional]
+                x_user_global_id (str): [optional]
+                definir_cotutelle_command (DefinirCotutelleCommand): [optional]
+                _return_http_data_only (bool): response data without head status
+                    code and headers. Default is True.
+                _preload_content (bool): if False, the urllib3.HTTPResponse object
+                    will be returned without reading/decoding response data.
+                    Default is True.
+                _request_timeout (float/tuple): timeout setting for this request. If one
+                    number provided, it will be total request timeout. It can also
+                    be a pair (tuple) of (connection, read) timeouts.
+                    Default is None.
+                _check_input_type (bool): specifies if type checking
+                    should be done one the data sent to the server.
+                    Default is True.
+                _check_return_type (bool): specifies if type checking
+                    should be done one the data received from the server.
+                    Default is True.
+                _host_index (int/None): specifies the index of the server
+                    that we want to use.
+                    Default is read from the configuration.
+                async_req (bool): execute request asynchronously
+
+            Returns:
+                PropositionIdentityDTO
+                    If the method is called asynchronously, returns the request
+                    thread.
+            """
+            kwargs['async_req'] = kwargs.get(
+                'async_req', False
+            )
+            kwargs['_return_http_data_only'] = kwargs.get(
+                '_return_http_data_only', True
+            )
+            kwargs['_preload_content'] = kwargs.get(
+                '_preload_content', True
+            )
+            kwargs['_request_timeout'] = kwargs.get(
+                '_request_timeout', None
+            )
+            kwargs['_check_input_type'] = kwargs.get(
+                '_check_input_type', True
+            )
+            kwargs['_check_return_type'] = kwargs.get(
+                '_check_return_type', True
+            )
+            kwargs['_host_index'] = kwargs.get('_host_index')
+            kwargs['uuid'] = \
+                uuid
+            return self.call_with_http_info(**kwargs)
+
+        self.update_cotutelle = _Endpoint(
+            settings={
+                'response_type': (PropositionIdentityDTO,),
+                'auth': [
+                    'Token'
+                ],
+                'endpoint_path': '/propositions/{uuid}/cotutelle',
+                'operation_id': 'update_cotutelle',
+                'http_method': 'PUT',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'uuid',
+                    'accept_language',
+                    'x_user_first_name',
+                    'x_user_last_name',
+                    'x_user_email',
+                    'x_user_global_id',
+                    'definir_cotutelle_command',
+                ],
+                'required': [
+                    'uuid',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'uuid':
+                        (str,),
+                    'accept_language':
+                        (AcceptedLanguageEnum,),
+                    'x_user_first_name':
+                        (str,),
+                    'x_user_last_name':
+                        (str,),
+                    'x_user_email':
+                        (str,),
+                    'x_user_global_id':
+                        (str,),
+                    'definir_cotutelle_command':
+                        (DefinirCotutelleCommand,),
+                },
+                'attribute_map': {
+                    'uuid': 'uuid',
+                    'accept_language': 'Accept-Language',
+                    'x_user_first_name': 'X-User-FirstName',
+                    'x_user_last_name': 'X-User-LastName',
+                    'x_user_email': 'X-User-Email',
+                    'x_user_global_id': 'X-User-GlobalID',
+                },
+                'location_map': {
+                    'uuid': 'path',
+                    'accept_language': 'header',
+                    'x_user_first_name': 'header',
+                    'x_user_last_name': 'header',
+                    'x_user_email': 'header',
+                    'x_user_global_id': 'header',
+                    'definir_cotutelle_command': 'body',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [
+                    'application/json'
+                ]
+            },
+            api_client=api_client,
+            callable=__update_cotutelle
+        )
+
         def __update_proposition(
             self,
             uuid,
@@ -384,6 +935,7 @@ class PropositionsApi(object):
         ):
             """update_proposition  # noqa: E501
 
+            Edit a proposition  # noqa: E501
             This method makes a synchronous HTTP request by default. To make an
             asynchronous HTTP request, please pass async_req=True
 
@@ -394,6 +946,11 @@ class PropositionsApi(object):
                 uuid (str):
 
             Keyword Args:
+                accept_language (AcceptedLanguageEnum): The header advertises which languages the client is able to understand, and which locale variant is preferred. (By languages, we mean natural languages, such as English, and not programming languages.). [optional]
+                x_user_first_name (str): [optional]
+                x_user_last_name (str): [optional]
+                x_user_email (str): [optional]
+                x_user_global_id (str): [optional]
                 completer_proposition_command (CompleterPropositionCommand): [optional]
                 _return_http_data_only (bool): response data without head status
                     code and headers. Default is True.
@@ -457,6 +1014,11 @@ class PropositionsApi(object):
             params_map={
                 'all': [
                     'uuid',
+                    'accept_language',
+                    'x_user_first_name',
+                    'x_user_last_name',
+                    'x_user_email',
+                    'x_user_global_id',
                     'completer_proposition_command',
                 ],
                 'required': [
@@ -477,14 +1039,34 @@ class PropositionsApi(object):
                 'openapi_types': {
                     'uuid':
                         (str,),
+                    'accept_language':
+                        (AcceptedLanguageEnum,),
+                    'x_user_first_name':
+                        (str,),
+                    'x_user_last_name':
+                        (str,),
+                    'x_user_email':
+                        (str,),
+                    'x_user_global_id':
+                        (str,),
                     'completer_proposition_command':
                         (CompleterPropositionCommand,),
                 },
                 'attribute_map': {
                     'uuid': 'uuid',
+                    'accept_language': 'Accept-Language',
+                    'x_user_first_name': 'X-User-FirstName',
+                    'x_user_last_name': 'X-User-LastName',
+                    'x_user_email': 'X-User-Email',
+                    'x_user_global_id': 'X-User-GlobalID',
                 },
                 'location_map': {
                     'uuid': 'path',
+                    'accept_language': 'header',
+                    'x_user_first_name': 'header',
+                    'x_user_last_name': 'header',
+                    'x_user_email': 'header',
+                    'x_user_global_id': 'header',
                     'completer_proposition_command': 'body',
                 },
                 'collection_format_map': {
@@ -500,4 +1082,160 @@ class PropositionsApi(object):
             },
             api_client=api_client,
             callable=__update_proposition
+        )
+
+        def __update_supervision(
+            self,
+            uuid,
+            **kwargs
+        ):
+            """update_supervision  # noqa: E501
+
+            Add a supervision group member for a proposition  # noqa: E501
+            This method makes a synchronous HTTP request by default. To make an
+            asynchronous HTTP request, please pass async_req=True
+
+            >>> thread = api.update_supervision(uuid, async_req=True)
+            >>> result = thread.get()
+
+            Args:
+                uuid (str):
+
+            Keyword Args:
+                accept_language (AcceptedLanguageEnum): The header advertises which languages the client is able to understand, and which locale variant is preferred. (By languages, we mean natural languages, such as English, and not programming languages.). [optional]
+                x_user_first_name (str): [optional]
+                x_user_last_name (str): [optional]
+                x_user_email (str): [optional]
+                x_user_global_id (str): [optional]
+                add_supervision_actor (AddSupervisionActor): [optional]
+                _return_http_data_only (bool): response data without head status
+                    code and headers. Default is True.
+                _preload_content (bool): if False, the urllib3.HTTPResponse object
+                    will be returned without reading/decoding response data.
+                    Default is True.
+                _request_timeout (float/tuple): timeout setting for this request. If one
+                    number provided, it will be total request timeout. It can also
+                    be a pair (tuple) of (connection, read) timeouts.
+                    Default is None.
+                _check_input_type (bool): specifies if type checking
+                    should be done one the data sent to the server.
+                    Default is True.
+                _check_return_type (bool): specifies if type checking
+                    should be done one the data received from the server.
+                    Default is True.
+                _host_index (int/None): specifies the index of the server
+                    that we want to use.
+                    Default is read from the configuration.
+                async_req (bool): execute request asynchronously
+
+            Returns:
+                PropositionIdentityDTO
+                    If the method is called asynchronously, returns the request
+                    thread.
+            """
+            kwargs['async_req'] = kwargs.get(
+                'async_req', False
+            )
+            kwargs['_return_http_data_only'] = kwargs.get(
+                '_return_http_data_only', True
+            )
+            kwargs['_preload_content'] = kwargs.get(
+                '_preload_content', True
+            )
+            kwargs['_request_timeout'] = kwargs.get(
+                '_request_timeout', None
+            )
+            kwargs['_check_input_type'] = kwargs.get(
+                '_check_input_type', True
+            )
+            kwargs['_check_return_type'] = kwargs.get(
+                '_check_return_type', True
+            )
+            kwargs['_host_index'] = kwargs.get('_host_index')
+            kwargs['uuid'] = \
+                uuid
+            return self.call_with_http_info(**kwargs)
+
+        self.update_supervision = _Endpoint(
+            settings={
+                'response_type': (PropositionIdentityDTO,),
+                'auth': [
+                    'Token'
+                ],
+                'endpoint_path': '/propositions/{uuid}/supervision',
+                'operation_id': 'update_supervision',
+                'http_method': 'PUT',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'uuid',
+                    'accept_language',
+                    'x_user_first_name',
+                    'x_user_last_name',
+                    'x_user_email',
+                    'x_user_global_id',
+                    'add_supervision_actor',
+                ],
+                'required': [
+                    'uuid',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'uuid':
+                        (str,),
+                    'accept_language':
+                        (AcceptedLanguageEnum,),
+                    'x_user_first_name':
+                        (str,),
+                    'x_user_last_name':
+                        (str,),
+                    'x_user_email':
+                        (str,),
+                    'x_user_global_id':
+                        (str,),
+                    'add_supervision_actor':
+                        (AddSupervisionActor,),
+                },
+                'attribute_map': {
+                    'uuid': 'uuid',
+                    'accept_language': 'Accept-Language',
+                    'x_user_first_name': 'X-User-FirstName',
+                    'x_user_last_name': 'X-User-LastName',
+                    'x_user_email': 'X-User-Email',
+                    'x_user_global_id': 'X-User-GlobalID',
+                },
+                'location_map': {
+                    'uuid': 'path',
+                    'accept_language': 'header',
+                    'x_user_first_name': 'header',
+                    'x_user_last_name': 'header',
+                    'x_user_email': 'header',
+                    'x_user_global_id': 'header',
+                    'add_supervision_actor': 'body',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [
+                    'application/json'
+                ]
+            },
+            api_client=api_client,
+            callable=__update_supervision
         )

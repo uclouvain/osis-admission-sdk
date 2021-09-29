@@ -1,12 +1,10 @@
-# InlineResponse200
+# SupervisionDTO
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**count** | **int** |  | [optional] 
-**next** | **str, none_type** |  | [optional] 
-**previous** | **str, none_type** |  | [optional] 
-**results** | [**[Tutor]**](Tutor.md) |  | [optional] 
+**signatures_promoteurs** | [**[SupervisionDTOSignaturesPromoteurs]**](SupervisionDTOSignaturesPromoteurs.md) |  | 
+**signatures_membres_ca** | [**[SupervisionDTOSignaturesMembresCA]**](SupervisionDTOSignaturesMembresCA.md) |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

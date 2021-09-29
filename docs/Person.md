@@ -1,12 +1,11 @@
-# InlineResponse200
+# Person
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**count** | **int** |  | [optional] 
-**next** | **str, none_type** |  | [optional] 
-**previous** | **str, none_type** |  | [optional] 
-**results** | [**[Tutor]**](Tutor.md) |  | [optional] 
+**first_name** | **str, none_type** |  | [optional] 
+**last_name** | **str, none_type** |  | [optional] 
+**global_id** | **str, none_type** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -85,6 +85,7 @@ class PropositionDTO(ModelNormal):
             'projet_formation_complementaire': ([str],),  # noqa: E501
             'langue_redaction_these': (str,),  # noqa: E501
             'doctorat_deja_realise': (str,),  # noqa: E501
+            'justification': (str,),  # noqa: E501
             'bureau_cde': (str,),  # noqa: E501
             'type_financement': (str,),  # noqa: E501
             'type_contrat_travail': (str,),  # noqa: E501
@@ -118,6 +119,7 @@ class PropositionDTO(ModelNormal):
         'projet_formation_complementaire': 'projet_formation_complementaire',  # noqa: E501
         'langue_redaction_these': 'langue_redaction_these',  # noqa: E501
         'doctorat_deja_realise': 'doctorat_deja_realise',  # noqa: E501
+        'justification': 'justification',  # noqa: E501
         'bureau_cde': 'bureau_CDE',  # noqa: E501
         'type_financement': 'type_financement',  # noqa: E501
         'type_contrat_travail': 'type_contrat_travail',  # noqa: E501
@@ -193,6 +195,7 @@ class PropositionDTO(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            justification (str): [optional]  # noqa: E501
             bureau_cde (str): [optional]  # noqa: E501
             type_financement (str): [optional]  # noqa: E501
             type_contrat_travail (str): [optional]  # noqa: E501
