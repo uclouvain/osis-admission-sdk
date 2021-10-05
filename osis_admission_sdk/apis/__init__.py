@@ -15,4 +15,5 @@
 
 # Import APIs into API package:
 from osis_admission_sdk.api.autocomplete_api import AutocompleteApi
+from osis_admission_sdk.api.person_api import PersonApi
 from osis_admission_sdk.api.propositions_api import PropositionsApi

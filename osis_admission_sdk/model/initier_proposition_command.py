@@ -25,6 +25,9 @@ from osis_admission_sdk.model_utils import (  # noqa: F401
     none_type,
     validate_get_composed_info,
 )
+from ..model_utils import OpenApiModel
+from osis_admission_sdk.exceptions import ApiAttributeError
+
 
 def lazy_import():
     from osis_admission_sdk.model.admission_type import AdmissionType
@@ -67,7 +70,14 @@ class InitierPropositionCommand(ModelNormal):
     validations = {
     }
 
-    additional_properties_type = None
+    @cached_property
+    def additional_properties_type():
+        """
+        This must be a method because a model may have properties that are
+        of type self, this must run after the class is loaded
+        """
+        lazy_import()
+        return (bool, date, datetime, dict, float, int, list, str, none_type,)  # noqa: E501
 
     _nullable = False
 
@@ -87,12 +97,12 @@ class InitierPropositionCommand(ModelNormal):
             'sigle_formation': (str,),  # noqa: E501
             'annee_formation': (int,),  # noqa: E501
             'matricule_candidat': (str,),  # noqa: E501
+            'bureau_cde': (ChoixBureauCDE,),  # noqa: E501
             'documents_projet': ([str],),  # noqa: E501
             'graphe_gantt': ([str],),  # noqa: E501
             'proposition_programme_doctoral': ([str],),  # noqa: E501
             'projet_formation_complementaire': ([str],),  # noqa: E501
             'justification': (str,),  # noqa: E501
-            'bureau_cde': (ChoixBureauCDE,),  # noqa: E501
             'type_financement': (str,),  # noqa: E501
             'type_contrat_travail': (str,),  # noqa: E501
             'eft': (int, none_type,),  # noqa: E501
@@ -118,12 +128,12 @@ class InitierPropositionCommand(ModelNormal):
         'sigle_formation': 'sigle_formation',  # noqa: E501
         'annee_formation': 'annee_formation',  # noqa: E501
         'matricule_candidat': 'matricule_candidat',  # noqa: E501
+        'bureau_cde': 'bureau_CDE',  # noqa: E501
         'documents_projet': 'documents_projet',  # noqa: E501
         'graphe_gantt': 'graphe_gantt',  # noqa: E501
         'proposition_programme_doctoral': 'proposition_programme_doctoral',  # noqa: E501
         'projet_formation_complementaire': 'projet_formation_complementaire',  # noqa: E501
         'justification': 'justification',  # noqa: E501
-        'bureau_cde': 'bureau_CDE',  # noqa: E501
         'type_financement': 'type_financement',  # noqa: E501
         'type_contrat_travail': 'type_contrat_travail',  # noqa: E501
         'eft': 'eft',  # noqa: E501
@@ -139,19 +149,14 @@ class InitierPropositionCommand(ModelNormal):
         'raison_non_soutenue': 'raison_non_soutenue',  # noqa: E501
     }
 
+    read_only_vars = {
+    }
+
     _composed_schemas = {}
 
-    required_properties = set([
-        '_data_store',
-        '_check_type',
-        '_spec_property_naming',
-        '_path_to_item',
-        '_configuration',
-        '_visited_composed_classes',
-    ])
-
+    @classmethod
     @convert_js_args_to_python_args
-    def __init__(self, type_admission, sigle_formation, annee_formation, matricule_candidat, documents_projet, graphe_gantt, proposition_programme_doctoral, projet_formation_complementaire, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, type_admission, sigle_formation, annee_formation, matricule_candidat, bureau_cde, documents_projet, graphe_gantt, proposition_programme_doctoral, projet_formation_complementaire, *args, **kwargs):  # noqa: E501
         """InitierPropositionCommand - a model defined in OpenAPI
 
         Args:
@@ -159,6 +164,7 @@ class InitierPropositionCommand(ModelNormal):
             sigle_formation (str):
             annee_formation (int):
             matricule_candidat (str):
+            bureau_cde (ChoixBureauCDE):
             documents_projet ([str]):
             graphe_gantt ([str]):
             proposition_programme_doctoral ([str]):
@@ -196,7 +202,121 @@ class InitierPropositionCommand(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             justification (str): [optional]  # noqa: E501
-            bureau_cde (ChoixBureauCDE): [optional]  # noqa: E501
+            type_financement (str): [optional]  # noqa: E501
+            type_contrat_travail (str): [optional]  # noqa: E501
+            eft (int, none_type): [optional]  # noqa: E501
+            bourse_recherche (str): [optional]  # noqa: E501
+            duree_prevue (int, none_type): [optional]  # noqa: E501
+            temps_consacre (int, none_type): [optional]  # noqa: E501
+            titre_projet (str): [optional]  # noqa: E501
+            resume_projet (str): [optional]  # noqa: E501
+            langue_redaction_these (ChoixLangueRedactionThese): [optional]  # noqa: E501
+            doctorat_deja_realise (ChoixDoctoratDejaRealise): [optional]  # noqa: E501
+            institution (str): [optional]  # noqa: E501
+            date_soutenance (date, none_type): [optional]  # noqa: E501
+            raison_non_soutenue (str): [optional]  # noqa: E501
+        """
+
+        _check_type = kwargs.pop('_check_type', True)
+        _spec_property_naming = kwargs.pop('_spec_property_naming', False)
+        _path_to_item = kwargs.pop('_path_to_item', ())
+        _configuration = kwargs.pop('_configuration', None)
+        _visited_composed_classes = kwargs.pop('_visited_composed_classes', ())
+
+        self = super(OpenApiModel, cls).__new__(cls)
+
+        if args:
+            raise ApiTypeError(
+                "Invalid positional arguments=%s passed to %s. Remove those invalid positional arguments." % (
+                    args,
+                    self.__class__.__name__,
+                ),
+                path_to_item=_path_to_item,
+                valid_classes=(self.__class__,),
+            )
+
+        self._data_store = {}
+        self._check_type = _check_type
+        self._spec_property_naming = _spec_property_naming
+        self._path_to_item = _path_to_item
+        self._configuration = _configuration
+        self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
+
+        self.type_admission = type_admission
+        self.sigle_formation = sigle_formation
+        self.annee_formation = annee_formation
+        self.matricule_candidat = matricule_candidat
+        self.bureau_cde = bureau_cde
+        self.documents_projet = documents_projet
+        self.graphe_gantt = graphe_gantt
+        self.proposition_programme_doctoral = proposition_programme_doctoral
+        self.projet_formation_complementaire = projet_formation_complementaire
+        for var_name, var_value in kwargs.items():
+            if var_name not in self.attribute_map and \
+                        self._configuration is not None and \
+                        self._configuration.discard_unknown_keys and \
+                        self.additional_properties_type is None:
+                # discard variable.
+                continue
+            setattr(self, var_name, var_value)
+        return self
+
+    required_properties = set([
+        '_data_store',
+        '_check_type',
+        '_spec_property_naming',
+        '_path_to_item',
+        '_configuration',
+        '_visited_composed_classes',
+    ])
+
+    @convert_js_args_to_python_args
+    def __init__(self, type_admission, sigle_formation, annee_formation, matricule_candidat, bureau_cde, documents_projet, graphe_gantt, proposition_programme_doctoral, projet_formation_complementaire, *args, **kwargs):  # noqa: E501
+        """InitierPropositionCommand - a model defined in OpenAPI
+
+        Args:
+            type_admission (AdmissionType):
+            sigle_formation (str):
+            annee_formation (int):
+            matricule_candidat (str):
+            bureau_cde (ChoixBureauCDE):
+            documents_projet ([str]):
+            graphe_gantt ([str]):
+            proposition_programme_doctoral ([str]):
+            projet_formation_complementaire ([str]):
+
+        Keyword Args:
+            _check_type (bool): if True, values for parameters in openapi_types
+                                will be type checked and a TypeError will be
+                                raised if the wrong type is input.
+                                Defaults to True
+            _path_to_item (tuple/list): This is a list of keys or values to
+                                drill down to the model in received_data
+                                when deserializing a response
+            _spec_property_naming (bool): True if the variable names in the input data
+                                are serialized names, as specified in the OpenAPI document.
+                                False if the variable names in the input data
+                                are pythonic names, e.g. snake case (default)
+            _configuration (Configuration): the instance to use when
+                                deserializing a file_type parameter.
+                                If passed, type conversion is attempted
+                                If omitted no type conversion is done.
+            _visited_composed_classes (tuple): This stores a tuple of
+                                classes that we have traveled through so that
+                                if we see that class again we will not use its
+                                discriminator again.
+                                When traveling through a discriminator, the
+                                composed schema that is
+                                is traveled through is added to this set.
+                                For example if Animal has a discriminator
+                                petType and we pass in "Dog", and the class Dog
+                                allOf includes Animal, we move through Animal
+                                once using the discriminator, and pick Dog.
+                                Then in Dog, we will make an instance of the
+                                Animal class but this time we won't travel
+                                through its discriminator because we passed in
+                                _visited_composed_classes = (Animal,)
+            justification (str): [optional]  # noqa: E501
             type_financement (str): [optional]  # noqa: E501
             type_contrat_travail (str): [optional]  # noqa: E501
             eft (int, none_type): [optional]  # noqa: E501
@@ -239,6 +359,7 @@ class InitierPropositionCommand(ModelNormal):
         self.sigle_formation = sigle_formation
         self.annee_formation = annee_formation
         self.matricule_candidat = matricule_candidat
+        self.bureau_cde = bureau_cde
         self.documents_projet = documents_projet
         self.graphe_gantt = graphe_gantt
         self.proposition_programme_doctoral = proposition_programme_doctoral
@@ -251,3 +372,6 @@ class InitierPropositionCommand(ModelNormal):
                 # discard variable.
                 continue
             setattr(self, var_name, var_value)
+            if var_name in self.read_only_vars:
+                raise ApiAttributeError(f"`{var_name}` is a read-only attribute. Use `from_openapi_data` to instantiate "
+                                     f"class with read only attributes.")
