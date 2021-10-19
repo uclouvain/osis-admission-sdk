@@ -1,18 +1,17 @@
-# PropositionSearchDTO
+# CoordonneesContact
 
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**uuid** | **str** |  | 
-**type_admission** | **str** |  | 
-**sigle_doctorat** | **str** |  | 
-**intitule_doctorat_fr** | **str** |  | 
-**intitule_doctorat_en** | **str** |  | 
-**matricule_candidat** | **str** |  | 
-**code_secteur_formation** | **str** |  | 
-**creee_le** | **datetime** |  | 
-**bureau_cde** | **str** |  | [optional] 
+**location** | **str, none_type** |  | [optional] 
+**postal_code** | **str, none_type** |  | [optional] 
+**city** | **str, none_type** |  | [optional] 
+**country** | **str** |  | [optional] 
+**street** | **str** |  | [optional] 
+**street_number** | **str** |  | [optional] 
+**postal_box** | **str** |  | [optional] 
+**place** | **str** |  | [optional] 
 **any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

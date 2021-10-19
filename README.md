@@ -52,7 +52,6 @@ import osis_admission_sdk
 from pprint import pprint
 from osis_admission_sdk.api import autocomplete_api
 from osis_admission_sdk.model.accepted_language_enum import AcceptedLanguageEnum
-from osis_admission_sdk.model.country import Country
 from osis_admission_sdk.model.doctorat_dto import DoctoratDTO
 from osis_admission_sdk.model.error import Error
 from osis_admission_sdk.model.sector_dto import SectorDTO
@@ -78,17 +77,18 @@ configuration.api_key['Token'] = 'YOUR_API_KEY'
 with osis_admission_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = autocomplete_api.AutocompleteApi(api_client)
-    accept_language = AcceptedLanguageEnum("en") # AcceptedLanguageEnum | The header advertises which languages the client is able to understand, and which locale variant is preferred. (By languages, we mean natural languages, such as English, and not programming languages.) (optional)
+    sigle = "sigle_example" # str | 
+accept_language = AcceptedLanguageEnum("en") # AcceptedLanguageEnum | The header advertises which languages the client is able to understand, and which locale variant is preferred. (By languages, we mean natural languages, such as English, and not programming languages.) (optional)
 x_user_first_name = "X-User-FirstName_example" # str |  (optional)
 x_user_last_name = "X-User-LastName_example" # str |  (optional)
 x_user_email = "X-User-Email_example" # str |  (optional)
 x_user_global_id = "X-User-GlobalID_example" # str |  (optional)
 
     try:
-        api_response = api_instance.list_countries(accept_language=accept_language, x_user_first_name=x_user_first_name, x_user_last_name=x_user_last_name, x_user_email=x_user_email, x_user_global_id=x_user_global_id)
+        api_response = api_instance.list_doctorat_dtos(sigle, accept_language=accept_language, x_user_first_name=x_user_first_name, x_user_last_name=x_user_last_name, x_user_email=x_user_email, x_user_global_id=x_user_global_id)
         pprint(api_response)
     except osis_admission_sdk.ApiException as e:
-        print("Exception when calling AutocompleteApi->list_countries: %s\n" % e)
+        print("Exception when calling AutocompleteApi->list_doctorat_dtos: %s\n" % e)
 ```
 
 ## Documentation for API Endpoints
@@ -97,10 +97,11 @@ All URIs are relative to *https://dev.osis.uclouvain.be/api/v1/admission*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*AutocompleteApi* | [**list_countries**](docs/AutocompleteApi.md#list_countries) | **GET** /autocomplete/country | 
 *AutocompleteApi* | [**list_doctorat_dtos**](docs/AutocompleteApi.md#list_doctorat_dtos) | **GET** /autocomplete/sector/{sigle}/doctorates | 
 *AutocompleteApi* | [**list_sector_dtos**](docs/AutocompleteApi.md#list_sector_dtos) | **GET** /autocomplete/sector | 
+*PersonApi* | [**retrieve_coordonnees**](docs/PersonApi.md#retrieve_coordonnees) | **GET** /coordonnees | 
 *PersonApi* | [**retrieve_person_identification**](docs/PersonApi.md#retrieve_person_identification) | **GET** /person | 
+*PersonApi* | [**update_coordonnees**](docs/PersonApi.md#update_coordonnees) | **PUT** /coordonnees | 
 *PersonApi* | [**update_person_identification**](docs/PersonApi.md#update_person_identification) | **PUT** /person | 
 *PropositionsApi* | [**create_proposition**](docs/PropositionsApi.md#create_proposition) | **POST** /propositions | 
 *PropositionsApi* | [**list_propositions**](docs/PropositionsApi.md#list_propositions) | **GET** /propositions | 
@@ -116,7 +117,8 @@ Class | Method | HTTP request | Description
  - [ChoixDoctoratDejaRealise](docs/ChoixDoctoratDejaRealise.md)
  - [ChoixLangueRedactionThese](docs/ChoixLangueRedactionThese.md)
  - [CompleterPropositionCommand](docs/CompleterPropositionCommand.md)
- - [Country](docs/Country.md)
+ - [Coordonnees](docs/Coordonnees.md)
+ - [CoordonneesContact](docs/CoordonneesContact.md)
  - [DoctoratDTO](docs/DoctoratDTO.md)
  - [Error](docs/Error.md)
  - [InitierPropositionCommand](docs/InitierPropositionCommand.md)

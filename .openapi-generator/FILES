@@ -9,7 +9,8 @@ docs/ChoixBureauCDE.md
 docs/ChoixDoctoratDejaRealise.md
 docs/ChoixLangueRedactionThese.md
 docs/CompleterPropositionCommand.md
-docs/Country.md
+docs/Coordonnees.md
+docs/CoordonneesContact.md
 docs/DoctoratDTO.md
 docs/Error.md
 docs/InitierPropositionCommand.md
@@ -37,7 +38,8 @@ osis_admission_sdk/model/choix_bureau_cde.py
 osis_admission_sdk/model/choix_doctorat_deja_realise.py
 osis_admission_sdk/model/choix_langue_redaction_these.py
 osis_admission_sdk/model/completer_proposition_command.py
-osis_admission_sdk/model/country.py
+osis_admission_sdk/model/coordonnees.py
+osis_admission_sdk/model/coordonnees_contact.py
 osis_admission_sdk/model/doctorat_dto.py
 osis_admission_sdk/model/error.py
 osis_admission_sdk/model/initier_proposition_command.py
@@ -54,4 +56,6 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
+test/test_coordonnees.py
+test/test_coordonnees_contact.py
 tox.ini

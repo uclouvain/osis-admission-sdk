@@ -762,10 +762,10 @@ class Endpoint(object):
         Example:
 
         api_instance = AutocompleteApi()
-        api_instance.list_countries  # this is an instance of the class Endpoint
-        api_instance.list_countries()  # this invokes api_instance.list_countries.__call__()
+        api_instance.list_doctorat_dtos  # this is an instance of the class Endpoint
+        api_instance.list_doctorat_dtos()  # this invokes api_instance.list_doctorat_dtos.__call__()
         which then invokes the callable functions stored in that endpoint at
-        api_instance.list_countries.callable or self.callable in this class
+        api_instance.list_doctorat_dtos.callable or self.callable in this class
 
         """
         return self.callable(self, *args, **kwargs)

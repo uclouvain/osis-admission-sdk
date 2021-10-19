@@ -10,9 +10,9 @@ Name | Type | Description | Notes
 **first_name_in_use** | **str** |  | [optional] 
 **birth_date** | **date, none_type** |  | [optional] 
 **birth_year** | **int, none_type** |  | [optional] 
-**birth_country** | **int, none_type** |  | [optional] 
+**birth_country** | **str** |  | [optional] 
 **birth_place** | **str** |  | [optional] 
-**country_of_citizenship** | **int, none_type** |  | [optional] 
+**country_of_citizenship** | **str** |  | [optional] 
 **language** | **str, none_type** |  | [optional] 
 **sex** | **str** |  | [optional] 
 **gender** | **str** |  | [optional] 
@@ -23,7 +23,7 @@ Name | Type | Description | Notes
 **id_card_number** | **str** |  | [optional] 
 **passport_number** | **str** |  | [optional] 
 **passport_expiration_date** | **date, none_type** |  | [optional] 
-**last_registration_year** | **int, none_type** |  | [optional] 
+**last_registration_year** | **str** |  | [optional] 
 **any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

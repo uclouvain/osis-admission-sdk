@@ -15,7 +15,8 @@ from osis_admission_sdk.model.choix_bureau_cde import ChoixBureauCDE
 from osis_admission_sdk.model.choix_doctorat_deja_realise import ChoixDoctoratDejaRealise
 from osis_admission_sdk.model.choix_langue_redaction_these import ChoixLangueRedactionThese
 from osis_admission_sdk.model.completer_proposition_command import CompleterPropositionCommand
-from osis_admission_sdk.model.country import Country
+from osis_admission_sdk.model.coordonnees import Coordonnees
+from osis_admission_sdk.model.coordonnees_contact import CoordonneesContact
 from osis_admission_sdk.model.doctorat_dto import DoctoratDTO
 from osis_admission_sdk.model.error import Error
 from osis_admission_sdk.model.initier_proposition_command import InitierPropositionCommand

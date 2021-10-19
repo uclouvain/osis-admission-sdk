@@ -88,8 +88,8 @@ class PersonIdentification(ModelNormal):
             'max_length': 50,
         },
         ('birth_year',): {
-            'inclusive_maximum': 2147483647,
-            'inclusive_minimum': -2147483648,
+            'inclusive_maximum': 2999,
+            'inclusive_minimum': 1000,
         },
         ('birth_place',): {
             'max_length': 255,
@@ -141,9 +141,9 @@ class PersonIdentification(ModelNormal):
             'first_name_in_use': (str,),  # noqa: E501
             'birth_date': (date, none_type,),  # noqa: E501
             'birth_year': (int, none_type,),  # noqa: E501
-            'birth_country': (int, none_type,),  # noqa: E501
+            'birth_country': (str,),  # noqa: E501
             'birth_place': (str,),  # noqa: E501
-            'country_of_citizenship': (int, none_type,),  # noqa: E501
+            'country_of_citizenship': (str,),  # noqa: E501
             'language': (str, none_type,),  # noqa: E501
             'sex': (str,),  # noqa: E501
             'gender': (str,),  # noqa: E501
@@ -154,7 +154,7 @@ class PersonIdentification(ModelNormal):
             'id_card_number': (str,),  # noqa: E501
             'passport_number': (str,),  # noqa: E501
             'passport_expiration_date': (date, none_type,),  # noqa: E501
-            'last_registration_year': (int, none_type,),  # noqa: E501
+            'last_registration_year': (str,),  # noqa: E501
         }
 
     @cached_property
@@ -232,9 +232,9 @@ class PersonIdentification(ModelNormal):
             first_name_in_use (str): [optional]  # noqa: E501
             birth_date (date, none_type): [optional]  # noqa: E501
             birth_year (int, none_type): [optional]  # noqa: E501
-            birth_country (int, none_type): [optional]  # noqa: E501
+            birth_country (str): [optional]  # noqa: E501
             birth_place (str): [optional]  # noqa: E501
-            country_of_citizenship (int, none_type): [optional]  # noqa: E501
+            country_of_citizenship (str): [optional]  # noqa: E501
             language (str, none_type): [optional]  # noqa: E501
             sex (str): [optional]  # noqa: E501
             gender (str): [optional]  # noqa: E501
@@ -245,7 +245,7 @@ class PersonIdentification(ModelNormal):
             id_card_number (str): [optional]  # noqa: E501
             passport_number (str): [optional]  # noqa: E501
             passport_expiration_date (date, none_type): [optional]  # noqa: E501
-            last_registration_year (int, none_type): [optional]  # noqa: E501
+            last_registration_year (str): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -333,9 +333,9 @@ class PersonIdentification(ModelNormal):
             first_name_in_use (str): [optional]  # noqa: E501
             birth_date (date, none_type): [optional]  # noqa: E501
             birth_year (int, none_type): [optional]  # noqa: E501
-            birth_country (int, none_type): [optional]  # noqa: E501
+            birth_country (str): [optional]  # noqa: E501
             birth_place (str): [optional]  # noqa: E501
-            country_of_citizenship (int, none_type): [optional]  # noqa: E501
+            country_of_citizenship (str): [optional]  # noqa: E501
             language (str, none_type): [optional]  # noqa: E501
             sex (str): [optional]  # noqa: E501
             gender (str): [optional]  # noqa: E501
@@ -346,7 +346,7 @@ class PersonIdentification(ModelNormal):
             id_card_number (str): [optional]  # noqa: E501
             passport_number (str): [optional]  # noqa: E501
             passport_expiration_date (date, none_type): [optional]  # noqa: E501
-            last_registration_year (int, none_type): [optional]  # noqa: E501
+            last_registration_year (str): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
