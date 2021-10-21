@@ -56,6 +56,4 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
-test/test_coordonnees.py
-test/test_coordonnees_contact.py
 tox.ini

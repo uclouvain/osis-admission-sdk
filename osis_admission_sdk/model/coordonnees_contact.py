@@ -105,7 +105,7 @@ class CoordonneesContact(ModelNormal):
             'location': (str, none_type,),  # noqa: E501
             'postal_code': (str, none_type,),  # noqa: E501
             'city': (str, none_type,),  # noqa: E501
-            'country': (str,),  # noqa: E501
+            'country': (str, none_type,),  # noqa: E501
             'street': (str,),  # noqa: E501
             'street_number': (str,),  # noqa: E501
             'postal_box': (str,),  # noqa: E501
@@ -172,7 +172,7 @@ class CoordonneesContact(ModelNormal):
             location (str, none_type): [optional]  # noqa: E501
             postal_code (str, none_type): [optional]  # noqa: E501
             city (str, none_type): [optional]  # noqa: E501
-            country (str): [optional]  # noqa: E501
+            country (str, none_type): [optional]  # noqa: E501
             street (str): [optional]  # noqa: E501
             street_number (str): [optional]  # noqa: E501
             postal_box (str): [optional]  # noqa: E501
@@ -261,7 +261,7 @@ class CoordonneesContact(ModelNormal):
             location (str, none_type): [optional]  # noqa: E501
             postal_code (str, none_type): [optional]  # noqa: E501
             city (str, none_type): [optional]  # noqa: E501
-            country (str): [optional]  # noqa: E501
+            country (str, none_type): [optional]  # noqa: E501
             street (str): [optional]  # noqa: E501
             street_number (str): [optional]  # noqa: E501
             postal_box (str): [optional]  # noqa: E501

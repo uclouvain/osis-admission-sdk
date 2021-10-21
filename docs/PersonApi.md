@@ -363,7 +363,7 @@ with osis_admission_sdk.ApiClient(configuration) as api_client:
         id_card_number="id_card_number_example",
         passport_number="passport_number_example",
         passport_expiration_date=dateutil_parser('1970-01-01').date(),
-        last_registration_year="last_registration_year_example",
+        last_registration_year=1000,
     ) # PersonIdentification |  (optional)
 
     # example passing only required values which don't have defaults set
