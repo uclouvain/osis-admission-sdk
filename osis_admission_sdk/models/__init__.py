@@ -17,6 +17,8 @@ from osis_admission_sdk.model.choix_langue_redaction_these import ChoixLangueRed
 from osis_admission_sdk.model.completer_proposition_command import CompleterPropositionCommand
 from osis_admission_sdk.model.coordonnees import Coordonnees
 from osis_admission_sdk.model.coordonnees_contact import CoordonneesContact
+from osis_admission_sdk.model.cotutelle_dto import CotutelleDTO
+from osis_admission_sdk.model.definir_cotutelle_command import DefinirCotutelleCommand
 from osis_admission_sdk.model.doctorat_dto import DoctoratDTO
 from osis_admission_sdk.model.error import Error
 from osis_admission_sdk.model.initier_proposition_command import InitierPropositionCommand

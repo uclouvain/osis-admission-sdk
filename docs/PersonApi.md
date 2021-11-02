@@ -18,6 +18,7 @@ Method | HTTP request | Description
 ### Example
 
 * Api Key Authentication (Token):
+
 ```python
 import time
 import osis_admission_sdk
@@ -88,6 +89,7 @@ Name | Type | Description  | Notes
 
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** |  |  -  |
@@ -105,6 +107,7 @@ Name | Type | Description  | Notes
 ### Example
 
 * Api Key Authentication (Token):
+
 ```python
 import time
 import osis_admission_sdk
@@ -175,6 +178,7 @@ Name | Type | Description  | Notes
 
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** |  |  -  |
@@ -192,6 +196,7 @@ Name | Type | Description  | Notes
 ### Example
 
 * Api Key Authentication (Token):
+
 ```python
 import time
 import osis_admission_sdk
@@ -286,6 +291,7 @@ Name | Type | Description  | Notes
 
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** |  |  -  |
@@ -303,6 +309,7 @@ Name | Type | Description  | Notes
 ### Example
 
 * Api Key Authentication (Token):
+
 ```python
 import time
 import osis_admission_sdk
@@ -363,7 +370,7 @@ with osis_admission_sdk.ApiClient(configuration) as api_client:
         id_card_number="id_card_number_example",
         passport_number="passport_number_example",
         passport_expiration_date=dateutil_parser('1970-01-01').date(),
-        last_registration_year=1000,
+        last_registration_year=1,
     ) # PersonIdentification |  (optional)
 
     # example passing only required values which don't have defaults set
@@ -402,6 +409,7 @@ Name | Type | Description  | Notes
 
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** |  |  -  |

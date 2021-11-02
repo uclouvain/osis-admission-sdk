@@ -105,7 +105,9 @@ Class | Method | HTTP request | Description
 *PersonApi* | [**update_person_identification**](docs/PersonApi.md#update_person_identification) | **PUT** /person | 
 *PropositionsApi* | [**create_proposition**](docs/PropositionsApi.md#create_proposition) | **POST** /propositions | 
 *PropositionsApi* | [**list_propositions**](docs/PropositionsApi.md#list_propositions) | **GET** /propositions | 
+*PropositionsApi* | [**retrieve_cotutelle**](docs/PropositionsApi.md#retrieve_cotutelle) | **GET** /propositions/{uuid}/cotutelle | 
 *PropositionsApi* | [**retrieve_proposition**](docs/PropositionsApi.md#retrieve_proposition) | **GET** /propositions/{uuid} | 
+*PropositionsApi* | [**update_cotutelle**](docs/PropositionsApi.md#update_cotutelle) | **PUT** /propositions/{uuid}/cotutelle | 
 *PropositionsApi* | [**update_proposition**](docs/PropositionsApi.md#update_proposition) | **PUT** /propositions/{uuid} | 
 
 
@@ -119,6 +121,8 @@ Class | Method | HTTP request | Description
  - [CompleterPropositionCommand](docs/CompleterPropositionCommand.md)
  - [Coordonnees](docs/Coordonnees.md)
  - [CoordonneesContact](docs/CoordonneesContact.md)
+ - [CotutelleDTO](docs/CotutelleDTO.md)
+ - [DefinirCotutelleCommand](docs/DefinirCotutelleCommand.md)
  - [DoctoratDTO](docs/DoctoratDTO.md)
  - [Error](docs/Error.md)
  - [InitierPropositionCommand](docs/InitierPropositionCommand.md)

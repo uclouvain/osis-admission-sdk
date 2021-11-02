@@ -56,7 +56,6 @@ class PersonIdentification(ModelNormal):
 
     allowed_values = {
         ('language',): {
-            'None': None,
             'EMPTY': "",
             'FR-BE': "fr-be",
             'EN': "en",
@@ -98,10 +97,10 @@ class PersonIdentification(ModelNormal):
             'max_items': 1,
         },
         ('id_card',): {
-            'max_items': 1,
+            'max_items': 2,
         },
         ('passport',): {
-            'max_items': 1,
+            'max_items': 2,
         },
         ('national_number',): {
             'max_length': 255,
@@ -111,10 +110,6 @@ class PersonIdentification(ModelNormal):
         },
         ('passport_number',): {
             'max_length': 255,
-        },
-        ('last_registration_year',): {
-            'inclusive_maximum': 2999,
-            'inclusive_minimum': 1000,
         },
     }
 
@@ -148,7 +143,7 @@ class PersonIdentification(ModelNormal):
             'birth_country': (str, none_type,),  # noqa: E501
             'birth_place': (str,),  # noqa: E501
             'country_of_citizenship': (str, none_type,),  # noqa: E501
-            'language': (str, none_type,),  # noqa: E501
+            'language': (str,),  # noqa: E501
             'sex': (str,),  # noqa: E501
             'gender': (str,),  # noqa: E501
             'id_photo': ([str], none_type,),  # noqa: E501
@@ -239,7 +234,7 @@ class PersonIdentification(ModelNormal):
             birth_country (str, none_type): [optional]  # noqa: E501
             birth_place (str): [optional]  # noqa: E501
             country_of_citizenship (str, none_type): [optional]  # noqa: E501
-            language (str, none_type): [optional]  # noqa: E501
+            language (str): [optional]  # noqa: E501
             sex (str): [optional]  # noqa: E501
             gender (str): [optional]  # noqa: E501
             id_photo ([str], none_type): [optional]  # noqa: E501
@@ -340,7 +335,7 @@ class PersonIdentification(ModelNormal):
             birth_country (str, none_type): [optional]  # noqa: E501
             birth_place (str): [optional]  # noqa: E501
             country_of_citizenship (str, none_type): [optional]  # noqa: E501
-            language (str, none_type): [optional]  # noqa: E501
+            language (str): [optional]  # noqa: E501
             sex (str): [optional]  # noqa: E501
             gender (str): [optional]  # noqa: E501
             id_photo ([str], none_type): [optional]  # noqa: E501

@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **birth_country** | **str, none_type** |  | [optional] 
 **birth_place** | **str** |  | [optional] 
 **country_of_citizenship** | **str, none_type** |  | [optional] 
-**language** | **str, none_type** |  | [optional] 
+**language** | **str** |  | [optional] 
 **sex** | **str** |  | [optional] 
 **gender** | **str** |  | [optional] 
 **id_photo** | **[str], none_type** |  | [optional] 

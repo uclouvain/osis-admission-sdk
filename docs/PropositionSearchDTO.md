@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **intitule_doctorat_en** | **str** |  | 
 **matricule_candidat** | **str** |  | 
 **code_secteur_formation** | **str** |  | 
+**intitule_secteur_formation** | **str** |  | 
 **creee_le** | **datetime** |  | 
 **bureau_cde** | **str** |  | [optional] 
 **any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]

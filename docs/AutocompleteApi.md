@@ -18,6 +18,7 @@ Autocomplete doctorates given a sector
 ### Example
 
 * Api Key Authentication (Token):
+
 ```python
 import time
 import osis_admission_sdk
@@ -97,6 +98,7 @@ Name | Type | Description  | Notes
 
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** |  |  -  |
@@ -116,6 +118,7 @@ Autocomplete sectors
 ### Example
 
 * Api Key Authentication (Token):
+
 ```python
 import time
 import osis_admission_sdk
@@ -186,6 +189,7 @@ Name | Type | Description  | Notes
 
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** |  |  -  |

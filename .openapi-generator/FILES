@@ -11,6 +11,8 @@ docs/ChoixLangueRedactionThese.md
 docs/CompleterPropositionCommand.md
 docs/Coordonnees.md
 docs/CoordonneesContact.md
+docs/CotutelleDTO.md
+docs/DefinirCotutelleCommand.md
 docs/DoctoratDTO.md
 docs/Error.md
 docs/InitierPropositionCommand.md
@@ -40,6 +42,8 @@ osis_admission_sdk/model/choix_langue_redaction_these.py
 osis_admission_sdk/model/completer_proposition_command.py
 osis_admission_sdk/model/coordonnees.py
 osis_admission_sdk/model/coordonnees_contact.py
+osis_admission_sdk/model/cotutelle_dto.py
+osis_admission_sdk/model/definir_cotutelle_command.py
 osis_admission_sdk/model/doctorat_dto.py
 osis_admission_sdk/model/error.py
 osis_admission_sdk/model/initier_proposition_command.py
