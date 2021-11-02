@@ -473,7 +473,6 @@ with osis_admission_sdk.ApiClient(configuration) as api_client:
     x_user_email = "X-User-Email_example" # str |  (optional)
     x_user_global_id = "X-User-GlobalID_example" # str |  (optional)
     definir_cotutelle_command = DefinirCotutelleCommand(
-        uuid_proposition="uuid_proposition_example",
         motivation="motivation_example",
         institution="institution_example",
         demande_ouverture=[
