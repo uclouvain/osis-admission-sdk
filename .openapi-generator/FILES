@@ -3,6 +3,7 @@
 .travis.yml
 README.md
 docs/AcceptedLanguageEnum.md
+docs/ActorType.md
 docs/AdmissionType.md
 docs/AutocompleteApi.md
 docs/ChoixBureauCDE.md
@@ -16,6 +17,9 @@ docs/DefinirCotutelleCommand.md
 docs/DoctoratDTO.md
 docs/Error.md
 docs/InitierPropositionCommand.md
+docs/InlineResponse200.md
+docs/InlineResponse2001.md
+docs/Person.md
 docs/PersonApi.md
 docs/PersonIdentification.md
 docs/PropositionDTO.md
@@ -23,6 +27,12 @@ docs/PropositionIdentityDTO.md
 docs/PropositionSearchDTO.md
 docs/PropositionsApi.md
 docs/SectorDTO.md
+docs/SupervisionActor.md
+docs/SupervisionDTO.md
+docs/SupervisionDTOPromoteur.md
+docs/SupervisionDTOSignaturesMembresCA.md
+docs/SupervisionDTOSignaturesPromoteurs.md
+docs/Tutor.md
 git_push.sh
 osis_admission_sdk/__init__.py
 osis_admission_sdk/api/__init__.py
@@ -35,6 +45,7 @@ osis_admission_sdk/configuration.py
 osis_admission_sdk/exceptions.py
 osis_admission_sdk/model/__init__.py
 osis_admission_sdk/model/accepted_language_enum.py
+osis_admission_sdk/model/actor_type.py
 osis_admission_sdk/model/admission_type.py
 osis_admission_sdk/model/choix_bureau_cde.py
 osis_admission_sdk/model/choix_doctorat_deja_realise.py
@@ -47,11 +58,20 @@ osis_admission_sdk/model/definir_cotutelle_command.py
 osis_admission_sdk/model/doctorat_dto.py
 osis_admission_sdk/model/error.py
 osis_admission_sdk/model/initier_proposition_command.py
+osis_admission_sdk/model/inline_response200.py
+osis_admission_sdk/model/inline_response2001.py
+osis_admission_sdk/model/person.py
 osis_admission_sdk/model/person_identification.py
 osis_admission_sdk/model/proposition_dto.py
 osis_admission_sdk/model/proposition_identity_dto.py
 osis_admission_sdk/model/proposition_search_dto.py
 osis_admission_sdk/model/sector_dto.py
+osis_admission_sdk/model/supervision_actor.py
+osis_admission_sdk/model/supervision_dto.py
+osis_admission_sdk/model/supervision_dto_promoteur.py
+osis_admission_sdk/model/supervision_dto_signatures_membres_ca.py
+osis_admission_sdk/model/supervision_dto_signatures_promoteurs.py
+osis_admission_sdk/model/tutor.py
 osis_admission_sdk/model_utils.py
 osis_admission_sdk/models/__init__.py
 osis_admission_sdk/rest.py
@@ -60,4 +80,5 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
+test/test_supervision_actor.py
 tox.ini

@@ -4,6 +4,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**uuid_proposition** | **str** |  | 
 **demande_ouverture** | **[str]** |  | 
 **convention** | **[str]** |  | 
 **autres_documents** | **[str]** |  | 

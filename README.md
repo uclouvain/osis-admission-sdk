@@ -54,6 +54,8 @@ from osis_admission_sdk.api import autocomplete_api
 from osis_admission_sdk.model.accepted_language_enum import AcceptedLanguageEnum
 from osis_admission_sdk.model.doctorat_dto import DoctoratDTO
 from osis_admission_sdk.model.error import Error
+from osis_admission_sdk.model.inline_response200 import InlineResponse200
+from osis_admission_sdk.model.inline_response2001 import InlineResponse2001
 from osis_admission_sdk.model.sector_dto import SectorDTO
 # Defining the host is optional and defaults to https://dev.osis.uclouvain.be/api/v1/admission
 # See configuration.py for a list of all supported configuration parameters.
@@ -98,15 +100,20 @@ All URIs are relative to *https://dev.osis.uclouvain.be/api/v1/admission*
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *AutocompleteApi* | [**list_doctorat_dtos**](docs/AutocompleteApi.md#list_doctorat_dtos) | **GET** /autocomplete/sector/{sigle}/doctorates | 
+*AutocompleteApi* | [**list_persons**](docs/AutocompleteApi.md#list_persons) | **GET** /autocomplete/person | 
 *AutocompleteApi* | [**list_sector_dtos**](docs/AutocompleteApi.md#list_sector_dtos) | **GET** /autocomplete/sector | 
+*AutocompleteApi* | [**list_tutors**](docs/AutocompleteApi.md#list_tutors) | **GET** /autocomplete/tutor | 
 *PersonApi* | [**retrieve_coordonnees**](docs/PersonApi.md#retrieve_coordonnees) | **GET** /coordonnees | 
 *PersonApi* | [**retrieve_person_identification**](docs/PersonApi.md#retrieve_person_identification) | **GET** /person | 
 *PersonApi* | [**update_coordonnees**](docs/PersonApi.md#update_coordonnees) | **PUT** /coordonnees | 
 *PersonApi* | [**update_person_identification**](docs/PersonApi.md#update_person_identification) | **PUT** /person | 
+*PropositionsApi* | [**add_member**](docs/PropositionsApi.md#add_member) | **PUT** /propositions/{uuid}/supervision | 
 *PropositionsApi* | [**create_proposition**](docs/PropositionsApi.md#create_proposition) | **POST** /propositions | 
 *PropositionsApi* | [**list_propositions**](docs/PropositionsApi.md#list_propositions) | **GET** /propositions | 
+*PropositionsApi* | [**remove_member**](docs/PropositionsApi.md#remove_member) | **POST** /propositions/{uuid}/supervision | 
 *PropositionsApi* | [**retrieve_cotutelle**](docs/PropositionsApi.md#retrieve_cotutelle) | **GET** /propositions/{uuid}/cotutelle | 
 *PropositionsApi* | [**retrieve_proposition**](docs/PropositionsApi.md#retrieve_proposition) | **GET** /propositions/{uuid} | 
+*PropositionsApi* | [**retrieve_supervision**](docs/PropositionsApi.md#retrieve_supervision) | **GET** /propositions/{uuid}/supervision | 
 *PropositionsApi* | [**update_cotutelle**](docs/PropositionsApi.md#update_cotutelle) | **PUT** /propositions/{uuid}/cotutelle | 
 *PropositionsApi* | [**update_proposition**](docs/PropositionsApi.md#update_proposition) | **PUT** /propositions/{uuid} | 
 
@@ -114,6 +121,7 @@ Class | Method | HTTP request | Description
 ## Documentation For Models
 
  - [AcceptedLanguageEnum](docs/AcceptedLanguageEnum.md)
+ - [ActorType](docs/ActorType.md)
  - [AdmissionType](docs/AdmissionType.md)
  - [ChoixBureauCDE](docs/ChoixBureauCDE.md)
  - [ChoixDoctoratDejaRealise](docs/ChoixDoctoratDejaRealise.md)
@@ -126,11 +134,20 @@ Class | Method | HTTP request | Description
  - [DoctoratDTO](docs/DoctoratDTO.md)
  - [Error](docs/Error.md)
  - [InitierPropositionCommand](docs/InitierPropositionCommand.md)
+ - [InlineResponse200](docs/InlineResponse200.md)
+ - [InlineResponse2001](docs/InlineResponse2001.md)
+ - [Person](docs/Person.md)
  - [PersonIdentification](docs/PersonIdentification.md)
  - [PropositionDTO](docs/PropositionDTO.md)
  - [PropositionIdentityDTO](docs/PropositionIdentityDTO.md)
  - [PropositionSearchDTO](docs/PropositionSearchDTO.md)
  - [SectorDTO](docs/SectorDTO.md)
+ - [SupervisionActor](docs/SupervisionActor.md)
+ - [SupervisionDTO](docs/SupervisionDTO.md)
+ - [SupervisionDTOPromoteur](docs/SupervisionDTOPromoteur.md)
+ - [SupervisionDTOSignaturesMembresCA](docs/SupervisionDTOSignaturesMembresCA.md)
+ - [SupervisionDTOSignaturesPromoteurs](docs/SupervisionDTOSignaturesPromoteurs.md)
+ - [Tutor](docs/Tutor.md)
 
 
 ## Documentation For Authorization

@@ -81,6 +81,7 @@ class DefinirCotutelleCommand(ModelNormal):
                 and the value is attribute type.
         """
         return {
+            'uuid_proposition': (str,),  # noqa: E501
             'demande_ouverture': ([str],),  # noqa: E501
             'convention': ([str],),  # noqa: E501
             'autres_documents': ([str],),  # noqa: E501
@@ -94,6 +95,7 @@ class DefinirCotutelleCommand(ModelNormal):
 
 
     attribute_map = {
+        'uuid_proposition': 'uuid_proposition',  # noqa: E501
         'demande_ouverture': 'demande_ouverture',  # noqa: E501
         'convention': 'convention',  # noqa: E501
         'autres_documents': 'autres_documents',  # noqa: E501
@@ -108,10 +110,11 @@ class DefinirCotutelleCommand(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, demande_ouverture, convention, autres_documents, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, uuid_proposition, demande_ouverture, convention, autres_documents, *args, **kwargs):  # noqa: E501
         """DefinirCotutelleCommand - a model defined in OpenAPI
 
         Args:
+            uuid_proposition (str):
             demande_ouverture ([str]):
             convention ([str]):
             autres_documents ([str]):
@@ -176,6 +179,7 @@ class DefinirCotutelleCommand(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
+        self.uuid_proposition = uuid_proposition
         self.demande_ouverture = demande_ouverture
         self.convention = convention
         self.autres_documents = autres_documents
@@ -199,10 +203,11 @@ class DefinirCotutelleCommand(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, demande_ouverture, convention, autres_documents, *args, **kwargs):  # noqa: E501
+    def __init__(self, uuid_proposition, demande_ouverture, convention, autres_documents, *args, **kwargs):  # noqa: E501
         """DefinirCotutelleCommand - a model defined in OpenAPI
 
         Args:
+            uuid_proposition (str):
             demande_ouverture ([str]):
             convention ([str]):
             autres_documents ([str]):
@@ -265,6 +270,7 @@ class DefinirCotutelleCommand(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
+        self.uuid_proposition = uuid_proposition
         self.demande_ouverture = demande_ouverture
         self.convention = convention
         self.autres_documents = autres_documents
