@@ -17,6 +17,7 @@ Name | Type | Description | Notes
 **projet_formation_complementaire** | **[str]** |  | 
 **langue_redaction_these** | **str** |  | 
 **doctorat_deja_realise** | **str** |  | 
+**statut** | **str** |  | 
 **justification** | **str** |  | [optional] 
 **bureau_cde** | **str** |  | [optional] 
 **type_financement** | **str** |  | [optional] 

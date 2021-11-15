@@ -109,6 +109,7 @@ Class | Method | HTTP request | Description
 *PersonApi* | [**update_person_identification**](docs/PersonApi.md#update_person_identification) | **PUT** /person | 
 *PropositionsApi* | [**add_member**](docs/PropositionsApi.md#add_member) | **PUT** /propositions/{uuid}/supervision | 
 *PropositionsApi* | [**create_proposition**](docs/PropositionsApi.md#create_proposition) | **POST** /propositions | 
+*PropositionsApi* | [**destroy_proposition**](docs/PropositionsApi.md#destroy_proposition) | **DELETE** /propositions/{uuid} | 
 *PropositionsApi* | [**list_propositions**](docs/PropositionsApi.md#list_propositions) | **GET** /propositions | 
 *PropositionsApi* | [**remove_member**](docs/PropositionsApi.md#remove_member) | **POST** /propositions/{uuid}/supervision | 
 *PropositionsApi* | [**retrieve_cotutelle**](docs/PropositionsApi.md#retrieve_cotutelle) | **GET** /propositions/{uuid}/cotutelle | 

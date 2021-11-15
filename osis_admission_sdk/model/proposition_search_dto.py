@@ -90,6 +90,7 @@ class PropositionSearchDTO(ModelNormal):
             'code_secteur_formation': (str,),  # noqa: E501
             'intitule_secteur_formation': (str,),  # noqa: E501
             'creee_le': (datetime,),  # noqa: E501
+            'statut': (str,),  # noqa: E501
             'bureau_cde': (str,),  # noqa: E501
         }
 
@@ -108,6 +109,7 @@ class PropositionSearchDTO(ModelNormal):
         'code_secteur_formation': 'code_secteur_formation',  # noqa: E501
         'intitule_secteur_formation': 'intitule_secteur_formation',  # noqa: E501
         'creee_le': 'creee_le',  # noqa: E501
+        'statut': 'statut',  # noqa: E501
         'bureau_cde': 'bureau_CDE',  # noqa: E501
     }
 
@@ -118,7 +120,7 @@ class PropositionSearchDTO(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, uuid, type_admission, sigle_doctorat, intitule_doctorat_fr, intitule_doctorat_en, matricule_candidat, code_secteur_formation, intitule_secteur_formation, creee_le, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, uuid, type_admission, sigle_doctorat, intitule_doctorat_fr, intitule_doctorat_en, matricule_candidat, code_secteur_formation, intitule_secteur_formation, creee_le, statut, *args, **kwargs):  # noqa: E501
         """PropositionSearchDTO - a model defined in OpenAPI
 
         Args:
@@ -131,6 +133,7 @@ class PropositionSearchDTO(ModelNormal):
             code_secteur_formation (str):
             intitule_secteur_formation (str):
             creee_le (datetime):
+            statut (str):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -200,6 +203,7 @@ class PropositionSearchDTO(ModelNormal):
         self.code_secteur_formation = code_secteur_formation
         self.intitule_secteur_formation = intitule_secteur_formation
         self.creee_le = creee_le
+        self.statut = statut
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
@@ -220,7 +224,7 @@ class PropositionSearchDTO(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, uuid, type_admission, sigle_doctorat, intitule_doctorat_fr, intitule_doctorat_en, matricule_candidat, code_secteur_formation, intitule_secteur_formation, creee_le, *args, **kwargs):  # noqa: E501
+    def __init__(self, uuid, type_admission, sigle_doctorat, intitule_doctorat_fr, intitule_doctorat_en, matricule_candidat, code_secteur_formation, intitule_secteur_formation, creee_le, statut, *args, **kwargs):  # noqa: E501
         """PropositionSearchDTO - a model defined in OpenAPI
 
         Args:
@@ -233,6 +237,7 @@ class PropositionSearchDTO(ModelNormal):
             code_secteur_formation (str):
             intitule_secteur_formation (str):
             creee_le (datetime):
+            statut (str):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -300,6 +305,7 @@ class PropositionSearchDTO(ModelNormal):
         self.code_secteur_formation = code_secteur_formation
         self.intitule_secteur_formation = intitule_secteur_formation
         self.creee_le = creee_le
+        self.statut = statut
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \

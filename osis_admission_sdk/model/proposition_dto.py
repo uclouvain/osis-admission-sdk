@@ -94,6 +94,7 @@ class PropositionDTO(ModelNormal):
             'projet_formation_complementaire': ([str],),  # noqa: E501
             'langue_redaction_these': (str,),  # noqa: E501
             'doctorat_deja_realise': (str,),  # noqa: E501
+            'statut': (str,),  # noqa: E501
             'justification': (str,),  # noqa: E501
             'bureau_cde': (str,),  # noqa: E501
             'type_financement': (str,),  # noqa: E501
@@ -128,6 +129,7 @@ class PropositionDTO(ModelNormal):
         'projet_formation_complementaire': 'projet_formation_complementaire',  # noqa: E501
         'langue_redaction_these': 'langue_redaction_these',  # noqa: E501
         'doctorat_deja_realise': 'doctorat_deja_realise',  # noqa: E501
+        'statut': 'statut',  # noqa: E501
         'justification': 'justification',  # noqa: E501
         'bureau_cde': 'bureau_CDE',  # noqa: E501
         'type_financement': 'type_financement',  # noqa: E501
@@ -150,7 +152,7 @@ class PropositionDTO(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, type_admission, sigle_doctorat, annee_doctorat, intitule_doctorat_fr, intitule_doctorat_en, matricule_candidat, code_secteur_formation, documents_projet, graphe_gantt, proposition_programme_doctoral, projet_formation_complementaire, langue_redaction_these, doctorat_deja_realise, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, type_admission, sigle_doctorat, annee_doctorat, intitule_doctorat_fr, intitule_doctorat_en, matricule_candidat, code_secteur_formation, documents_projet, graphe_gantt, proposition_programme_doctoral, projet_formation_complementaire, langue_redaction_these, doctorat_deja_realise, statut, *args, **kwargs):  # noqa: E501
         """PropositionDTO - a model defined in OpenAPI
 
         Args:
@@ -167,6 +169,7 @@ class PropositionDTO(ModelNormal):
             projet_formation_complementaire ([str]):
             langue_redaction_these (str):
             doctorat_deja_realise (str):
+            statut (str):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -252,6 +255,7 @@ class PropositionDTO(ModelNormal):
         self.projet_formation_complementaire = projet_formation_complementaire
         self.langue_redaction_these = langue_redaction_these
         self.doctorat_deja_realise = doctorat_deja_realise
+        self.statut = statut
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
@@ -272,7 +276,7 @@ class PropositionDTO(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, type_admission, sigle_doctorat, annee_doctorat, intitule_doctorat_fr, intitule_doctorat_en, matricule_candidat, code_secteur_formation, documents_projet, graphe_gantt, proposition_programme_doctoral, projet_formation_complementaire, langue_redaction_these, doctorat_deja_realise, *args, **kwargs):  # noqa: E501
+    def __init__(self, type_admission, sigle_doctorat, annee_doctorat, intitule_doctorat_fr, intitule_doctorat_en, matricule_candidat, code_secteur_formation, documents_projet, graphe_gantt, proposition_programme_doctoral, projet_formation_complementaire, langue_redaction_these, doctorat_deja_realise, statut, *args, **kwargs):  # noqa: E501
         """PropositionDTO - a model defined in OpenAPI
 
         Args:
@@ -289,6 +293,7 @@ class PropositionDTO(ModelNormal):
             projet_formation_complementaire ([str]):
             langue_redaction_these (str):
             doctorat_deja_realise (str):
+            statut (str):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -372,6 +377,7 @@ class PropositionDTO(ModelNormal):
         self.projet_formation_complementaire = projet_formation_complementaire
         self.langue_redaction_these = langue_redaction_these
         self.doctorat_deja_realise = doctorat_deja_realise
+        self.statut = statut
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
