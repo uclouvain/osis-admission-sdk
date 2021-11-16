@@ -1,14 +1,15 @@
-# DefinirCotutelleCommand
+# HighSchoolDiplomaForeignDiploma
 
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**demande_ouverture** | **[str]** |  | 
-**convention** | **[str]** |  | 
-**autres_documents** | **[str]** |  | 
-**motivation** | **str** |  | [optional] 
-**institution** | **str** |  | [optional] 
+**academic_graduation_year** | **int, none_type** |  | 
+**linguistic_regime** | **str, none_type** |  | 
+**country** | **str, none_type** |  | 
+**result** | **str, none_type** |  | [optional] 
+**foreign_diploma_type** | **str, none_type** |  | [optional] 
+**other_linguistic_regime** | **str** |  | [optional] 
 **any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

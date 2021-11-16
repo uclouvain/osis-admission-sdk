@@ -16,6 +16,10 @@ docs/CotutelleDTO.md
 docs/DefinirCotutelleCommand.md
 docs/DoctoratDTO.md
 docs/Error.md
+docs/HighSchoolDiploma.md
+docs/HighSchoolDiplomaBelgianDiploma.md
+docs/HighSchoolDiplomaBelgianDiplomaSchedule.md
+docs/HighSchoolDiplomaForeignDiploma.md
 docs/InitierPropositionCommand.md
 docs/InlineResponse200.md
 docs/InlineResponse2001.md
@@ -57,6 +61,10 @@ osis_admission_sdk/model/cotutelle_dto.py
 osis_admission_sdk/model/definir_cotutelle_command.py
 osis_admission_sdk/model/doctorat_dto.py
 osis_admission_sdk/model/error.py
+osis_admission_sdk/model/high_school_diploma.py
+osis_admission_sdk/model/high_school_diploma_belgian_diploma.py
+osis_admission_sdk/model/high_school_diploma_belgian_diploma_schedule.py
+osis_admission_sdk/model/high_school_diploma_foreign_diploma.py
 osis_admission_sdk/model/initier_proposition_command.py
 osis_admission_sdk/model/inline_response200.py
 osis_admission_sdk/model/inline_response2001.py
@@ -80,5 +88,4 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
-test/test_supervision_actor.py
 tox.ini
