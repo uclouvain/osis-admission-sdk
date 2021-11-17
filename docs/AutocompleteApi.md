@@ -150,7 +150,7 @@ configuration.api_key['Token'] = 'YOUR_API_KEY'
 with osis_admission_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = autocomplete_api.AutocompleteApi(api_client)
-    search = "search_example" # str | The term to search the persons on
+    search = "search_example" # str | The term to search the persons on (first or last name, or global id)
     limit = 1 # int | Number of results to return per page. (optional)
     offset = 1 # int | The initial index from which to return the results. (optional)
     accept_language = AcceptedLanguageEnum("en") # AcceptedLanguageEnum | The header advertises which languages the client is able to understand, and which locale variant is preferred. (By languages, we mean natural languages, such as English, and not programming languages.) (optional)
@@ -180,7 +180,7 @@ with osis_admission_sdk.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **search** | **str**| The term to search the persons on |
+ **search** | **str**| The term to search the persons on (first or last name, or global id) |
  **limit** | **int**| Number of results to return per page. | [optional]
  **offset** | **int**| The initial index from which to return the results. | [optional]
  **accept_language** | **AcceptedLanguageEnum**| The header advertises which languages the client is able to understand, and which locale variant is preferred. (By languages, we mean natural languages, such as English, and not programming languages.) | [optional]
@@ -345,7 +345,7 @@ configuration.api_key['Token'] = 'YOUR_API_KEY'
 with osis_admission_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = autocomplete_api.AutocompleteApi(api_client)
-    search = "search_example" # str | The term to search the persons on
+    search = "search_example" # str | The term to search the persons on (first or last name, or global id)
     limit = 1 # int | Number of results to return per page. (optional)
     offset = 1 # int | The initial index from which to return the results. (optional)
     accept_language = AcceptedLanguageEnum("en") # AcceptedLanguageEnum | The header advertises which languages the client is able to understand, and which locale variant is preferred. (By languages, we mean natural languages, such as English, and not programming languages.) (optional)
@@ -375,7 +375,7 @@ with osis_admission_sdk.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **search** | **str**| The term to search the persons on |
+ **search** | **str**| The term to search the persons on (first or last name, or global id) |
  **limit** | **int**| Number of results to return per page. | [optional]
  **offset** | **int**| The initial index from which to return the results. | [optional]
  **accept_language** | **AcceptedLanguageEnum**| The header advertises which languages the client is able to understand, and which locale variant is preferred. (By languages, we mean natural languages, such as English, and not programming languages.) | [optional]

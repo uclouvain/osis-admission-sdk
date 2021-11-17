@@ -444,7 +444,7 @@ class AutocompleteApi(object):
         >>> result = thread.get()
 
         Args:
-            search (str): The term to search the persons on
+            search (str): The term to search the persons on (first or last name, or global id)
 
         Keyword Args:
             limit (int): Number of results to return per page.. [optional]
@@ -583,7 +583,7 @@ class AutocompleteApi(object):
         >>> result = thread.get()
 
         Args:
-            search (str): The term to search the persons on
+            search (str): The term to search the persons on (first or last name, or global id)
 
         Keyword Args:
             limit (int): Number of results to return per page.. [optional]

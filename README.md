@@ -104,8 +104,10 @@ Class | Method | HTTP request | Description
 *AutocompleteApi* | [**list_sector_dtos**](docs/AutocompleteApi.md#list_sector_dtos) | **GET** /autocomplete/sector | 
 *AutocompleteApi* | [**list_tutors**](docs/AutocompleteApi.md#list_tutors) | **GET** /autocomplete/tutor | 
 *PersonApi* | [**retrieve_coordonnees**](docs/PersonApi.md#retrieve_coordonnees) | **GET** /coordonnees | 
+*PersonApi* | [**retrieve_high_school_diploma**](docs/PersonApi.md#retrieve_high_school_diploma) | **GET** /secondary_studies | 
 *PersonApi* | [**retrieve_person_identification**](docs/PersonApi.md#retrieve_person_identification) | **GET** /person | 
 *PersonApi* | [**update_coordonnees**](docs/PersonApi.md#update_coordonnees) | **PUT** /coordonnees | 
+*PersonApi* | [**update_high_school_diploma**](docs/PersonApi.md#update_high_school_diploma) | **PUT** /secondary_studies | 
 *PersonApi* | [**update_person_identification**](docs/PersonApi.md#update_person_identification) | **PUT** /person | 
 *PropositionsApi* | [**add_member**](docs/PropositionsApi.md#add_member) | **PUT** /propositions/{uuid}/supervision | 
 *PropositionsApi* | [**create_proposition**](docs/PropositionsApi.md#create_proposition) | **POST** /propositions | 
@@ -124,6 +126,7 @@ Class | Method | HTTP request | Description
  - [AcceptedLanguageEnum](docs/AcceptedLanguageEnum.md)
  - [ActorType](docs/ActorType.md)
  - [AdmissionType](docs/AdmissionType.md)
+ - [BelgianCommunitiesOfEducation](docs/BelgianCommunitiesOfEducation.md)
  - [ChoixBureauCDE](docs/ChoixBureauCDE.md)
  - [ChoixDoctoratDejaRealise](docs/ChoixDoctoratDejaRealise.md)
  - [ChoixLangueRedactionThese](docs/ChoixLangueRedactionThese.md)
@@ -132,8 +135,15 @@ Class | Method | HTTP request | Description
  - [CoordonneesContact](docs/CoordonneesContact.md)
  - [CotutelleDTO](docs/CotutelleDTO.md)
  - [DefinirCotutelleCommand](docs/DefinirCotutelleCommand.md)
+ - [DiplomaResults](docs/DiplomaResults.md)
  - [DoctoratDTO](docs/DoctoratDTO.md)
+ - [EducationalType](docs/EducationalType.md)
  - [Error](docs/Error.md)
+ - [ForeignDiplomaTypes](docs/ForeignDiplomaTypes.md)
+ - [HighSchoolDiploma](docs/HighSchoolDiploma.md)
+ - [HighSchoolDiplomaBelgianDiploma](docs/HighSchoolDiplomaBelgianDiploma.md)
+ - [HighSchoolDiplomaBelgianDiplomaSchedule](docs/HighSchoolDiplomaBelgianDiplomaSchedule.md)
+ - [HighSchoolDiplomaForeignDiploma](docs/HighSchoolDiplomaForeignDiploma.md)
  - [InitierPropositionCommand](docs/InitierPropositionCommand.md)
  - [InlineResponse200](docs/InlineResponse200.md)
  - [InlineResponse2001](docs/InlineResponse2001.md)

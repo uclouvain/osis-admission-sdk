@@ -6,6 +6,7 @@ docs/AcceptedLanguageEnum.md
 docs/ActorType.md
 docs/AdmissionType.md
 docs/AutocompleteApi.md
+docs/BelgianCommunitiesOfEducation.md
 docs/ChoixBureauCDE.md
 docs/ChoixDoctoratDejaRealise.md
 docs/ChoixLangueRedactionThese.md
@@ -14,8 +15,15 @@ docs/Coordonnees.md
 docs/CoordonneesContact.md
 docs/CotutelleDTO.md
 docs/DefinirCotutelleCommand.md
+docs/DiplomaResults.md
 docs/DoctoratDTO.md
+docs/EducationalType.md
 docs/Error.md
+docs/ForeignDiplomaTypes.md
+docs/HighSchoolDiploma.md
+docs/HighSchoolDiplomaBelgianDiploma.md
+docs/HighSchoolDiplomaBelgianDiplomaSchedule.md
+docs/HighSchoolDiplomaForeignDiploma.md
 docs/InitierPropositionCommand.md
 docs/InlineResponse200.md
 docs/InlineResponse2001.md
@@ -47,6 +55,7 @@ osis_admission_sdk/model/__init__.py
 osis_admission_sdk/model/accepted_language_enum.py
 osis_admission_sdk/model/actor_type.py
 osis_admission_sdk/model/admission_type.py
+osis_admission_sdk/model/belgian_communities_of_education.py
 osis_admission_sdk/model/choix_bureau_cde.py
 osis_admission_sdk/model/choix_doctorat_deja_realise.py
 osis_admission_sdk/model/choix_langue_redaction_these.py
@@ -55,8 +64,15 @@ osis_admission_sdk/model/coordonnees.py
 osis_admission_sdk/model/coordonnees_contact.py
 osis_admission_sdk/model/cotutelle_dto.py
 osis_admission_sdk/model/definir_cotutelle_command.py
+osis_admission_sdk/model/diploma_results.py
 osis_admission_sdk/model/doctorat_dto.py
+osis_admission_sdk/model/educational_type.py
 osis_admission_sdk/model/error.py
+osis_admission_sdk/model/foreign_diploma_types.py
+osis_admission_sdk/model/high_school_diploma.py
+osis_admission_sdk/model/high_school_diploma_belgian_diploma.py
+osis_admission_sdk/model/high_school_diploma_belgian_diploma_schedule.py
+osis_admission_sdk/model/high_school_diploma_foreign_diploma.py
 osis_admission_sdk/model/initier_proposition_command.py
 osis_admission_sdk/model/inline_response200.py
 osis_admission_sdk/model/inline_response2001.py
