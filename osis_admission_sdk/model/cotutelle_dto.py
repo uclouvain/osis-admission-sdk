@@ -84,6 +84,7 @@ class CotutelleDTO(ModelNormal):
             'demande_ouverture': ([str],),  # noqa: E501
             'convention': ([str],),  # noqa: E501
             'autres_documents': ([str],),  # noqa: E501
+            'cotutelle': (bool, none_type,),  # noqa: E501
             'motivation': (str,),  # noqa: E501
             'institution': (str,),  # noqa: E501
         }
@@ -97,6 +98,7 @@ class CotutelleDTO(ModelNormal):
         'demande_ouverture': 'demande_ouverture',  # noqa: E501
         'convention': 'convention',  # noqa: E501
         'autres_documents': 'autres_documents',  # noqa: E501
+        'cotutelle': 'cotutelle',  # noqa: E501
         'motivation': 'motivation',  # noqa: E501
         'institution': 'institution',  # noqa: E501
     }
@@ -147,6 +149,7 @@ class CotutelleDTO(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            cotutelle (bool, none_type): [optional]  # noqa: E501
             motivation (str): [optional]  # noqa: E501
             institution (str): [optional]  # noqa: E501
         """
@@ -238,6 +241,7 @@ class CotutelleDTO(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            cotutelle (bool, none_type): [optional]  # noqa: E501
             motivation (str): [optional]  # noqa: E501
             institution (str): [optional]  # noqa: E501
         """
